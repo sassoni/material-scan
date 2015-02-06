@@ -3,7 +3,7 @@ package com.theandroidpeople.materialscan.offers;
 import android.app.Activity;
 import android.net.Uri;
 import android.os.Bundle;
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -81,8 +81,8 @@ public class OffersFragment extends Fragment {
         try {
             mListener = (OnFragmentInteractionListener) activity;
         } catch (ClassCastException e) {
-            throw new ClassCastException(activity.toString()
-                    + " must implement OnFragmentInteractionListener");
+//            throw new ClassCastException(activity.toString()
+//                    + " must implement OnFragmentInteractionListener");
         }
     }
 
