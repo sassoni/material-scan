@@ -4,21 +4,22 @@ import android.app.Activity;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.theandroidpeople.materialscan.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link OffersFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link OffersFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class OffersFragment extends Fragment {
+
+    private static final int OFFERS_SIZE = 5;
+
+    private RecyclerView recyclerView;
+    private RecyclerView.Adapter adapter;
+    private RecyclerView.LayoutManager layoutManager;
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -64,8 +65,17 @@ public class OffersFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_offers, container, false);
+
+        View view = inflater.inflate(R.layout.fragment_offers, container, false);
+        recyclerView = (RecyclerView) view.findViewById(R.id.offers_recycler_view);
+
+        layoutManager = new GridLayoutManager(getActivity(), 2);
+        recyclerView.setLayoutManager(layoutManager);
+
+        adapter = new OffersAdapter(OFFERS_SIZE);
+        recyclerView.setAdapter(adapter);
+
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
