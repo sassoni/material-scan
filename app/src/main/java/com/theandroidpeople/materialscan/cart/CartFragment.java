@@ -1,16 +1,24 @@
 package com.theandroidpeople.materialscan.cart;
 
 import android.app.Activity;
+import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ExpandableListAdapter;
+import android.widget.ExpandableListView;
 
+import com.theandroidpeople.materialscan.CartItemsAdapter;
 import com.theandroidpeople.materialscan.R;
 
 public class CartFragment extends Fragment {
+
+    CartItemsAdapter listAdapter;
+    ExpandableListView expListView;
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -57,7 +65,29 @@ public class CartFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_cart, container, false);
+        View view = inflater.inflate(R.layout.fragment_cart, container, false);
+        expListView = (ExpandableListView) view.findViewById(R.id.cart_list_view);
+
+        // preparing list data
+        //prepareListData();
+
+        //listAdapter = new CartItemsAdapter(10/*getActivity(), listDataHeader, listDataChild*/);
+        // setting list adapter
+        //expListView.setAdapter(listAdapter);
+
+
+        expListView.setDividerHeight(2);
+        expListView.setGroupIndicator(null);
+        expListView.setClickable(true);
+        CartItemsAdapter adapter = new CartItemsAdapter(5);
+        adapter.setInflater((LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE), getActivity());
+        expListView.setAdapter(adapter);
+        //expListView.setOnChildClickListener(getActivity());
+
+
+
+
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
