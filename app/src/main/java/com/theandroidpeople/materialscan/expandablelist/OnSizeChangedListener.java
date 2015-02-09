@@ -1,4 +1,4 @@
-package com.theandroidpeople.materialscan.exp;
+package com.theandroidpeople.materialscan.expandablelist;
 
 /**
  * A listener used to update the list data object when the corresponding expanding

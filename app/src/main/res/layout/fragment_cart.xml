@@ -4,16 +4,9 @@
     android:layout_height="match_parent"
     tools:context="com.theandroidpeople.materialscan.cart.CartFragment">
 
-<!--    <ExpandableListView
+    <com.theandroidpeople.materialscan.expandablelist.ExpandingListView
         android:id="@+id/cart_list_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />-->
-
-    <com.theandroidpeople.materialscan.exp.ExpandingListView
-        android:id="@+id/main_list_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-         />
+        android:layout_height="match_parent" />
 
 </FrameLayout>

@@ -1,4 +1,4 @@
-package com.theandroidpeople.materialscan.exp;
+package com.theandroidpeople.materialscan.expandablelist;
 
 import android.content.Context;
 import android.util.AttributeSet;

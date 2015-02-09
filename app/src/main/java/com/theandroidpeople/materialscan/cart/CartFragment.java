@@ -1,29 +1,21 @@
 package com.theandroidpeople.materialscan.cart;
 
 import android.app.Activity;
-import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ExpandableListAdapter;
-import android.widget.ExpandableListView;
 
-import com.theandroidpeople.materialscan.CartItemsAdapter;
 import com.theandroidpeople.materialscan.R;
-import com.theandroidpeople.materialscan.exp.ExpCartItemsAdapter;
-import com.theandroidpeople.materialscan.exp.ExpandableListItem;
-import com.theandroidpeople.materialscan.exp.ExpandingListView;
+import com.theandroidpeople.materialscan.expandablelist.ExpandableListItem;
+import com.theandroidpeople.materialscan.expandablelist.ExpandingListView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class CartFragment extends Fragment {
-
-    CartItemsAdapter listAdapter;
-    ExpandableListView expListView;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -33,12 +25,6 @@ public class CartFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
-
-    private final int CELL_DEFAULT_HEIGHT = 200;
-    private final int NUM_OF_CELLS = 30;
-
-    private ExpandingListView mListView;
 
     private OnFragmentInteractionListener mListener;
 
@@ -61,7 +47,6 @@ public class CartFragment extends Fragment {
     }
 
     public CartFragment() {
-        // Required empty public constructor
     }
 
     @Override
@@ -74,50 +59,13 @@ public class CartFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_cart, container, false);
 
-//        expListView = (ExpandableListView) view.findViewById(R.id.cart_list_view);
-//        // preparing list data
-//        //prepareListData();
-//        //listAdapter = new CartItemsAdapter(10/*getActivity(), listDataHeader, listDataChild*/);
-//        // setting list adapter
-//        //expListView.setAdapter(listAdapter);
-//        expListView.setDividerHeight(2);
-//        expListView.setGroupIndicator(null);
-//        expListView.setClickable(true);
-//        CartItemsAdapter adapter = new CartItemsAdapter(5);
-//        adapter.setInflater((LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE), getActivity());
-//        expListView.setAdapter(adapter);
-//        //expListView.setOnChildClickListener(getActivity());
-
-
-        ExpandableListItem[] values = new ExpandableListItem[] {
-                new ExpandableListItem("Coca Cola 6 pack", R.drawable.dollar, CELL_DEFAULT_HEIGHT,
-                        getResources().getString(R.string.short_lorem_ipsum)),
-                new ExpandableListItem("Tampons 10 pack", R.drawable.dollar, CELL_DEFAULT_HEIGHT,
-                        getResources().getString(R.string.medium_lorem_ipsum)),
-                new ExpandableListItem("Toilet paper", R.drawable.dollar, CELL_DEFAULT_HEIGHT,
-                        getResources().getString(R.string.long_lorem_ipsum)),
-        };
-
-        List<ExpandableListItem> mData = new ArrayList<ExpandableListItem>();
-
-        for (int i = 0; i < NUM_OF_CELLS; i++) {
-            ExpandableListItem obj = values[i % values.length];
-            mData.add(new ExpandableListItem(obj.getTitle(), obj.getImgResource(),
-                    obj.getCollapsedHeight(), obj.getText()));
-        }
-
-        ExpCartItemsAdapter adapter = new ExpCartItemsAdapter(getActivity(), R.layout.list_view_item, mData);
-
-        mListView = (ExpandingListView) view.findViewById(R.id.main_list_view);
-        mListView.setAdapter(adapter);
-        mListView.setDivider(null);
-
-
+        CartItemsAdapter adapter = new CartItemsAdapter(getActivity(), generateTestData());
+        ExpandingListView listView = (ExpandingListView) view.findViewById(R.id.cart_list_view);
+        listView.setAdapter(adapter);
+        listView.setDivider(null);
 
         return view;
     }
@@ -159,6 +107,23 @@ public class CartFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         public void onFragmentInteraction(Uri uri);
+    }
+
+    private List<ExpandableListItem> generateTestData() {
+        List<ExpandableListItem> data = new ArrayList<>();
+        data.add(new ExpandableListItem(new CartItem("Coca Cola 6 pack", 10.00f, 0.00f)));
+        data.add(new ExpandableListItem(new CartItem("Colgate toothpaste", 2.50f, 1.00f)));
+        data.add(new ExpandableListItem(new CartItem("Cheddar Cheese", 6.00f, 0.00f)));
+        data.add(new ExpandableListItem(new CartItem("Tomatoes on the vine", 8.25f, 2.40f)));
+        data.add(new ExpandableListItem(new CartItem("Cucumbers 4", 2.70f, 0.0f)));
+        data.add(new ExpandableListItem(new CartItem("Nutella hazelnut spread", 5.66f, 0.60f)));
+        data.add(new ExpandableListItem(new CartItem("Florida orange juice", 3.60f, 0.00f)));
+        data.add(new ExpandableListItem(new CartItem("Hood milk 1lt", 1.70f, 0.10f)));
+        data.add(new ExpandableListItem(new CartItem("Pepperidge Farm cookies", 3.05f, 0.10f)));
+        data.add(new ExpandableListItem(new CartItem("Kellogg's Corn Flakes", 2.50f, 0.00f)));
+        data.add(new ExpandableListItem(new CartItem("Tazzo tea berryblossom white", 5.00f, 0.00f)));
+        data.add(new ExpandableListItem(new CartItem("Bananas", 1.50f, 0.10f)));
+        return data;
     }
 
 }

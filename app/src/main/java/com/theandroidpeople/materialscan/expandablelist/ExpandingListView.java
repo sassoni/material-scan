@@ -1,4 +1,4 @@
-package com.theandroidpeople.materialscan.exp;
+package com.theandroidpeople.materialscan.expandablelist;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -10,12 +10,9 @@ import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewTreeObserver;
-import android.view.animation.Animation;
-import android.view.animation.TranslateAnimation;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import com.theandroidpeople.materialscan.R;
@@ -31,6 +28,7 @@ import java.util.List;
 public class ExpandingListView extends ListView {
 
     private boolean mShouldRemoveObserver = false;
+    private static final int dollarHeight = 50;
 
     private List<View> mViewsToDraw = new ArrayList<View>();
 
@@ -182,31 +180,10 @@ public class ExpandingListView extends ListView {
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        final ImageView dollarView = (ImageView) view.findViewById(R.id.image_view);
-        ObjectAnimator objectAnimator= ObjectAnimator.ofFloat(dollarView, "translationY", 0, 100);
-        objectAnimator.setDuration(300);
+        final ImageView dollarView = (ImageView) view.findViewById(R.id.dollar_image_view);
+        ObjectAnimator objectAnimator= ObjectAnimator.ofFloat(dollarView, "translationY", 0, dollarHeight);
+        objectAnimator.setDuration(400);
         objectAnimator.start();
-//        TranslateAnimation animation = new TranslateAnimation(0, 0, 0, 100);
-//        animation.setDuration(800);
-//        animation.setFillEnabled(true);
-//        animation.setFillAfter(true);
-//        animation.setAnimationListener(new TranslateAnimation.AnimationListener() {
-//            @Override
-//            public void onAnimationStart(Animation animation) { }
-//            @Override
-//            public void onAnimationRepeat(Animation animation) { }
-//            @Override
-//            public void onAnimationEnd(Animation animation) {
-//                //LinearLayout.LayoutParams params = (LinearLayout.LayoutParams)view.getLayoutParams();
-//                //params.topMargin += amountToMoveDown;
-//                //params.leftMargin += amountToMoveRight;
-//                //view.setLayoutParams(params);
-//                //dollarView.setTop();
-//                dollarView.layout(dollarView.getLeft(), getTop()+100, getRight(), getBottom()+100 );
-//
-//            }
-//        });
-//        dollarView.startAnimation(animation);
 
         /* Update the layout so the extra content becomes visible.*/
         final View expandingLayout = view.findViewById(R.id.expanding_layout);
@@ -397,18 +374,10 @@ public class ExpandingListView extends ListView {
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        final ImageView dollarView = (ImageView) view.findViewById(R.id.image_view);
-        ObjectAnimator objectAnimator= ObjectAnimator.ofFloat(dollarView, "translationY", 100, 0);
-        objectAnimator.setDuration(300);
+        final ImageView dollarView = (ImageView) view.findViewById(R.id.dollar_image_view);
+        ObjectAnimator objectAnimator= ObjectAnimator.ofFloat(dollarView, "translationY", dollarHeight, 0);
+        objectAnimator.setDuration(400);
         objectAnimator.start();
-//        TranslateAnimation animation = new TranslateAnimation(0, 0, 0, -100);
-//        animation.setDuration(800);
-//        animation.setFillAfter(true);
-//        //animation.setAnimationListener(new MyAnimationListener());
-//        dollarView.startAnimation(animation);
-
-
-
 
         final HashMap<View, int[]> oldCoordinates = new HashMap<View, int[]>();
 
