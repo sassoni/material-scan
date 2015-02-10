@@ -4,10 +4,23 @@
     android:layout_height="match_parent"
     tools:context="com.theandroidpeople.materialscan.offers.OffersFragment">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/offers_recycler_view"
+    <!--    <android.support.v7.widget.RecyclerView
+            android:id="@+id/offers_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical" /-->>
+
+    <GridView
+        android:layout_margin="10dp"
+        android:id="@+id/gridview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scrollbars="vertical" />
+        android:columnWidth="90dp"
+        android:gravity="center"
+        android:horizontalSpacing="10dp"
+        android:numColumns="2"
+        android:layout_gravity="center"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="10dp" />
 
 </FrameLayout>

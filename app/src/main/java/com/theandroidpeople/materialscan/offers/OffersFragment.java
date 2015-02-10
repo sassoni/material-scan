@@ -9,6 +9,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.GridView;
+import android.widget.Toast;
 
 import com.theandroidpeople.materialscan.R;
 
@@ -67,13 +70,21 @@ public class OffersFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_offers, container, false);
-        recyclerView = (RecyclerView) view.findViewById(R.id.offers_recycler_view);
 
-        layoutManager = new GridLayoutManager(getActivity(), 2);
-        recyclerView.setLayoutManager(layoutManager);
+        GridView gridview = (GridView) view.findViewById(R.id.gridview);
+        gridview.setAdapter(new OffersAdapter(OFFERS_SIZE));
 
-        adapter = new OffersAdapter(OFFERS_SIZE);
-        recyclerView.setAdapter(adapter);
+        gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+                Toast.makeText(getActivity(), "" + position, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+//        recyclerView = (RecyclerView) view.findViewById(R.id.offers_recycler_view);
+//        layoutManager = new GridLayoutManager(getActivity(), 2);
+//        recyclerView.setLayoutManager(layoutManager);
+//        adapter = new OffersAdapter(OFFERS_SIZE);
+//        recyclerView.setAdapter(adapter);
 
         return view;
     }
