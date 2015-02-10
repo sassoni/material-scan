@@ -1,14 +1,24 @@
 package com.theandroidpeople.materialscan.shoppinglist;
 
 import android.app.Activity;
+import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import com.theandroidpeople.materialscan.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ShoppingListFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
@@ -44,6 +54,14 @@ public class ShoppingListFragment extends Fragment {
         // Required empty public constructor
     }
 
+    private List<String> list = new ArrayList<>();
+    private EditText editText;
+    private InputMethodManager imm;
+
+    private RecyclerView recyclerView;
+    private RecyclerView.Adapter adapter;
+    private RecyclerView.LayoutManager layoutManager;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,7 +75,40 @@ public class ShoppingListFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_shopping_list, container, false);
+
+        View view = inflater.inflate(R.layout.fragment_shopping_list, container, false);
+
+        imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+
+        recyclerView = (RecyclerView) view.findViewById(R.id.fragment_shopping_list_recyclerview);
+        recyclerView.setHasFixedSize(false);
+
+        layoutManager = new LinearLayoutManager(getActivity());
+        recyclerView.setLayoutManager(layoutManager);
+
+        adapter = new ShoppingListAdapter(list);
+        recyclerView.setAdapter(adapter);
+
+
+        editText = (EditText) view.findViewById(R.id.fragment_shopping_list_edittext);
+        editText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+
+                String textEntered = editText.getText().toString().trim();
+                if (textEntered.length() > 0) {
+                    list.add(textEntered);
+                    adapter.notifyDataSetChanged();
+                    editText.setText("");
+                }
+
+                imm.hideSoftInputFromWindow(editText.getWindowToken(), 0);
+
+                return true;
+            }
+        });
+
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

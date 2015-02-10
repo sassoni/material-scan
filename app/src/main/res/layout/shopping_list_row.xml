@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical">
+
+    <CheckBox
+        android:id="@+id/shopping_list_row_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    
+    <TextView
+        android:id="@+id/shopping_list_row_textview"
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:text="Hello"/>
+
+    <ImageView
+        android:id="@+id/shopping_list_row_scanbutton"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:src="@drawable/barcode"
+        android:layout_marginRight="10dp"
+        android:elevation="4dp"/>
+    
+</LinearLayout>
