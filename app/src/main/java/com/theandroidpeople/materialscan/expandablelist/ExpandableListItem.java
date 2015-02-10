@@ -3,7 +3,7 @@ package com.theandroidpeople.materialscan.expandablelist;
 import com.theandroidpeople.materialscan.cart.CartItem;
 
 public class ExpandableListItem implements OnSizeChangedListener {
-    private static final int HEIGHT = 130;
+    private static final int HEIGHT = 140;
 
     private CartItem item;
     private boolean isExpanded;

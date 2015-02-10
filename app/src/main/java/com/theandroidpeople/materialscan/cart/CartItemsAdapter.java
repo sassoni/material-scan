@@ -58,17 +58,22 @@ public class CartItemsAdapter extends ArrayAdapter<ExpandableListItem> {
         if (hasSavings) {
             piggyView.setVisibility(View.VISIBLE);
         } else {
-            piggyView.setVisibility(View.INVISIBLE);
+            piggyView.setVisibility(View.GONE);
         }
 
         TextView titleView = (TextView) convertView.findViewById(R.id.title_view);
         titleView.setText(object.getCartItem().getDescription());
 
         TextView textView = (TextView) convertView.findViewById(R.id.text_view);
-        textView.setText("Savings: $" + object.getCartItem().getSavings());
+        textView.setText("Savings: $" + String.format("%.2f", object.getCartItem().getSavings()));
+        if (hasSavings) {
+            textView.setVisibility(View.VISIBLE);
+        } else {
+            textView.setVisibility(View.GONE);
+        }
 
         TextView priceView = (TextView) convertView.findViewById(R.id.price_view);
-        priceView.setText("$" + object.getCartItem().getFinalPrice());
+        priceView.setText("$" +  String.format("%.2f", object.getCartItem().getFinalPrice()));
 
         convertView.setLayoutParams(new ListView.LayoutParams(AbsListView.LayoutParams.MATCH_PARENT,
                 AbsListView.LayoutParams.WRAP_CONTENT));

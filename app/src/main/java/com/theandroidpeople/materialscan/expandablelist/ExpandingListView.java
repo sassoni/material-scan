@@ -28,7 +28,7 @@ import java.util.List;
 public class ExpandingListView extends ListView {
 
     private boolean mShouldRemoveObserver = false;
-    private static final int dollarHeight = 50;
+    private static final int dollarTranslation = 80;
 
     private List<View> mViewsToDraw = new ArrayList<View>();
 
@@ -165,6 +165,8 @@ public class ExpandingListView extends ListView {
         final ExpandableListItem viewObject = (ExpandableListItem)getItemAtPosition(getPositionForView
                 (view));
 
+        //viewObject.setCollapsedHeight(view.getHeight());
+
         /* Store the original top and bottom bounds of all the cells.*/
         final int oldTop = view.getTop();
         final int oldBottom = view.getBottom();
@@ -181,7 +183,7 @@ public class ExpandingListView extends ListView {
         //////////////////////////////////////////////////////////////////////////////////////////////////////
 
         final ImageView dollarView = (ImageView) view.findViewById(R.id.dollar_image_view);
-        ObjectAnimator objectAnimator= ObjectAnimator.ofFloat(dollarView, "translationY", 0, dollarHeight);
+        ObjectAnimator objectAnimator= ObjectAnimator.ofFloat(dollarView, "translationY", 0, dollarTranslation);
         objectAnimator.setDuration(400);
         objectAnimator.start();
 
@@ -375,7 +377,7 @@ public class ExpandingListView extends ListView {
         //////////////////////////////////////////////////////////////////////////////////////////////////////
 
         final ImageView dollarView = (ImageView) view.findViewById(R.id.dollar_image_view);
-        ObjectAnimator objectAnimator= ObjectAnimator.ofFloat(dollarView, "translationY", dollarHeight, 0);
+        ObjectAnimator objectAnimator= ObjectAnimator.ofFloat(dollarView, "translationY", dollarTranslation, 0);
         objectAnimator.setDuration(400);
         objectAnimator.start();
 
