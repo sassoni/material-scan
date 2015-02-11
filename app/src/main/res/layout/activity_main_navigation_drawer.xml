@@ -18,21 +18,26 @@
                 android:id="@+id/navigation_drawer_profile_view"
                 android:layout_width="match_parent"
                 android:layout_height="175dp"
-                android:background="@drawable/material_background"
-                android:elevation="4dp"
-                android:paddingBottom="16dp"
-                android:paddingLeft="16dp"
-                android:paddingTop="16dp">
+                android:elevation="4dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ss" />
 
                 <TextView
                     android:id="@+id/credential"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="sans-serif-medium"
                     android:text="2210590929072"
                     android:textColor="#ffffff"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
+                    android:textSize="14sp" />
 
             </RelativeLayout>
 
@@ -46,104 +51,104 @@
                 style="?android:attr/borderlessButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
+                android:alpha="0.87"
+                android:fontFamily="sans-serif-medium"
                 android:gravity="left|center_vertical"
                 android:paddingLeft="16dp"
                 android:text="Stop And Shop Card"
                 android:textAllCaps="false"
-                android:fontFamily="sans-serif-medium"
-                android:textSize="14sp"
                 android:textColor="#000000"
-                android:alpha="0.87"/>
+                android:textSize="14sp" />
 
             <Button
                 style="?android:attr/borderlessButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
+                android:alpha="0.87"
+                android:fontFamily="sans-serif-medium"
                 android:gravity="left|center_vertical"
                 android:paddingLeft="16dp"
                 android:text="Preferred Store"
                 android:textAllCaps="false"
-                android:fontFamily="sans-serif-medium"
-                android:textSize="14sp"
                 android:textColor="#000000"
-                android:alpha="0.87"/>
+                android:textSize="14sp" />
 
             <Button
                 style="?android:attr/borderlessButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
+                android:alpha="0.87"
+                android:fontFamily="sans-serif-medium"
                 android:gravity="left|center_vertical"
                 android:paddingLeft="16dp"
                 android:text="Terms &amp; Conditions"
                 android:textAllCaps="false"
-                android:fontFamily="sans-serif-medium"
-                android:textSize="14sp"
                 android:textColor="#000000"
-                android:alpha="0.87"/>
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/navigation_drawer_help_subheader"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:alpha="0.54"
+                android:fontFamily="sans-serif-medium"
                 android:gravity="center_vertical"
                 android:paddingLeft="16dp"
                 android:text="How Do I..."
                 android:textColor="#000000"
-                android:fontFamily="sans-serif-medium"
-                android:textSize="14sp"/>
+                android:textSize="14sp" />
 
             <Button
                 style="?android:attr/borderlessButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
+                android:alpha="0.87"
+                android:fontFamily="sans-serif-medium"
                 android:gravity="left|center_vertical"
                 android:paddingLeft="16dp"
                 android:text="... Connect to Wi-Fi?"
                 android:textAllCaps="false"
-                android:fontFamily="sans-serif-medium"
-                android:textSize="14sp"
                 android:textColor="#000000"
-                android:alpha="0.87"/>
+                android:textSize="14sp" />
 
             <Button
                 style="?android:attr/borderlessButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
+                android:alpha="0.87"
+                android:fontFamily="sans-serif-medium"
                 android:gravity="left|center_vertical"
                 android:paddingLeft="16dp"
                 android:text="... Buy Produce?"
                 android:textAllCaps="false"
-                android:fontFamily="sans-serif-medium"
-                android:textSize="14sp"
                 android:textColor="#000000"
-                android:alpha="0.87"/>
+                android:textSize="14sp" />
 
             <Button
                 style="?android:attr/borderlessButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
+                android:alpha="0.87"
+                android:fontFamily="sans-serif-medium"
                 android:gravity="left|center_vertical"
                 android:paddingLeft="16dp"
                 android:text="... Checkout?"
                 android:textAllCaps="false"
-                android:fontFamily="sans-serif-medium"
-                android:textSize="14sp"
                 android:textColor="#000000"
-                android:alpha="0.87"/>
+                android:textSize="14sp" />
 
             <Button
                 style="?android:attr/borderlessButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
+                android:alpha="0.87"
+                android:fontFamily="sans-serif-medium"
                 android:gravity="left|center_vertical"
                 android:paddingLeft="16dp"
                 android:text="... View Tutorial?"
                 android:textAllCaps="false"
-                android:fontFamily="sans-serif-medium"
-                android:textSize="14sp"
                 android:textColor="#000000"
-                android:alpha="0.87"/>
+                android:textSize="14sp" />
 
             <ImageView
                 android:id="@+id/activity_main_divider"
@@ -158,27 +163,27 @@
                 style="?android:attr/borderlessButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
+                android:alpha="0.87"
+                android:fontFamily="sans-serif-medium"
                 android:gravity="left|center_vertical"
                 android:paddingLeft="16dp"
                 android:text="Contacts"
                 android:textAllCaps="false"
-                android:fontFamily="sans-serif-medium"
-                android:textSize="14sp"
                 android:textColor="#000000"
-                android:alpha="0.87"/>
+                android:textSize="14sp" />
 
             <Button
                 style="?android:attr/borderlessButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
+                android:alpha="0.87"
+                android:fontFamily="sans-serif-medium"
                 android:gravity="left|center_vertical"
                 android:paddingLeft="16dp"
                 android:text="About"
                 android:textAllCaps="false"
-                android:fontFamily="sans-serif-medium"
-                android:textSize="14sp"
                 android:textColor="#000000"
-                android:alpha="0.87"/>
+                android:textSize="14sp" />
 
         </LinearLayout>
 
