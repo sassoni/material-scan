@@ -17,7 +17,7 @@ import com.theandroidpeople.materialscan.R;
 
 public class OffersFragment extends Fragment {
 
-    private static final int OFFERS_SIZE = 5;
+    private static final int OFFERS_SIZE = 10;
 
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
@@ -72,7 +72,7 @@ public class OffersFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_offers, container, false);
 
         GridView gridview = (GridView) view.findViewById(R.id.gridview);
-        gridview.setAdapter(new OffersAdapter(OFFERS_SIZE));
+        gridview.setAdapter(new OffersAdapter(/*getActivity(),*/ OFFERS_SIZE));
 
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
