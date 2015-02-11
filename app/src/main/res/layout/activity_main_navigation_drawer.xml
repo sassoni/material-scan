@@ -50,7 +50,7 @@
                 android:paddingLeft="16dp"
                 android:text="Stop And Shop Card"
                 android:textAllCaps="false"
-                android:textStyle="bold"
+                android:fontFamily="sans-serif-medium"
                 android:textSize="14sp"
                 android:textColor="#000000"
                 android:alpha="0.87"/>
@@ -63,7 +63,7 @@
                 android:paddingLeft="16dp"
                 android:text="Preferred Store"
                 android:textAllCaps="false"
-                android:textStyle="bold"
+                android:fontFamily="sans-serif-medium"
                 android:textSize="14sp"
                 android:textColor="#000000"
                 android:alpha="0.87"/>
@@ -76,7 +76,7 @@
                 android:paddingLeft="16dp"
                 android:text="Terms &amp; Conditions"
                 android:textAllCaps="false"
-                android:textStyle="bold"
+                android:fontFamily="sans-serif-medium"
                 android:textSize="14sp"
                 android:textColor="#000000"
                 android:alpha="0.87"/>
@@ -90,7 +90,7 @@
                 android:paddingLeft="16dp"
                 android:text="How Do I..."
                 android:textColor="#000000"
-                android:textStyle="bold"
+                android:fontFamily="sans-serif-medium"
                 android:textSize="14sp"/>
 
             <Button
@@ -101,7 +101,7 @@
                 android:paddingLeft="16dp"
                 android:text="... Connect to Wi-Fi?"
                 android:textAllCaps="false"
-                android:textStyle="bold"
+                android:fontFamily="sans-serif-medium"
                 android:textSize="14sp"
                 android:textColor="#000000"
                 android:alpha="0.87"/>
@@ -114,7 +114,7 @@
                 android:paddingLeft="16dp"
                 android:text="... Buy Produce?"
                 android:textAllCaps="false"
-                android:textStyle="bold"
+                android:fontFamily="sans-serif-medium"
                 android:textSize="14sp"
                 android:textColor="#000000"
                 android:alpha="0.87"/>
@@ -127,7 +127,7 @@
                 android:paddingLeft="16dp"
                 android:text="... Checkout?"
                 android:textAllCaps="false"
-                android:textStyle="bold"
+                android:fontFamily="sans-serif-medium"
                 android:textSize="14sp"
                 android:textColor="#000000"
                 android:alpha="0.87"/>
@@ -140,7 +140,7 @@
                 android:paddingLeft="16dp"
                 android:text="... View Tutorial?"
                 android:textAllCaps="false"
-                android:textStyle="bold"
+                android:fontFamily="sans-serif-medium"
                 android:textSize="14sp"
                 android:textColor="#000000"
                 android:alpha="0.87"/>
@@ -162,7 +162,7 @@
                 android:paddingLeft="16dp"
                 android:text="Contacts"
                 android:textAllCaps="false"
-                android:textStyle="bold"
+                android:fontFamily="sans-serif-medium"
                 android:textSize="14sp"
                 android:textColor="#000000"
                 android:alpha="0.87"/>
@@ -175,7 +175,7 @@
                 android:paddingLeft="16dp"
                 android:text="About"
                 android:textAllCaps="false"
-                android:textStyle="bold"
+                android:fontFamily="sans-serif-medium"
                 android:textSize="14sp"
                 android:textColor="#000000"
                 android:alpha="0.87"/>
