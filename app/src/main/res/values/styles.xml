@@ -1,19 +1,20 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="actionBarStyle">@style/Theme.MyApp.ActionBar</item>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!--<item name="actionBarStyle">@style/Theme.MyApp.ActionBar</item>-->
         <item name="android:windowContentOverlay">@null</item>
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryDark">@color/primary_dark</item>
         <item name="colorAccent">@color/accent</item>
+        <item name="android:windowActionBar">false</item>
     </style>
 
-    <style name="Theme.MyApp.ActionBar" parent="style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
-        <!-- remove shadow below action bar -->
-        <item name="android:elevation">0dp</item>
-        <!-- Support library compatibility -->
-        <item name="elevation">0dp</item>
-    </style>
+    <!--<style name="Theme.MyApp.ActionBar" parent="style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">-->
+        <!--&lt;!&ndash; remove shadow below action bar &ndash;&gt;-->
+        <!--<item name="android:elevation">0dp</item>-->
+        <!--&lt;!&ndash; Support library compatibility &ndash;&gt;-->
+        <!--<item name="elevation">0dp</item>-->
+    <!--</style>-->
 
 </resources>

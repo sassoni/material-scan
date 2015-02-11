@@ -19,8 +19,8 @@
 
     <ImageView
         android:id="@+id/shopping_list_row_scanbutton"
-        android:layout_width="46dp"
-        android:layout_height="46dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:src="@drawable/barcode"
         android:layout_marginRight="10dp"
         android:elevation="4dp"/>

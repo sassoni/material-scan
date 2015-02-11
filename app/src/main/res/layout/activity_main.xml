@@ -1,95 +1,19 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
-    <RelativeLayout
-        android:id="@+id/activity_main_checkout"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:orientation="vertical"
-        android:padding="16dp"
-        android:layout_alignParentBottom="true"
-        android:background="@android:color/white">
+    <!--Content View-->
+    <include
+        android:id="@+id/content_frame"
+        layout="@layout/activity_main_content"
+        />
 
-        <Button
-            android:id="@+id/activity_main_checkout_button"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:text="CHECKOUT"
-            android:textColor="@color/primary" />
+    <include
+        android:id="@+id/left_drawer"
+        layout="@layout/activity_main_navigation_drawer"
+        />
 
-        <TextView
-            android:id="@+id/savings"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:paddingBottom="10dp"
-            android:text="Savings: $2.50" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_below="@id/savings"
-            android:text="Total: $25.00" />
-
-    </RelativeLayout>
-
-    <com.theandroidpeople.materialscan.FloatingActionButton
-        android:id="@+id/fab_1"
-        android:layout_width="@dimen/fab_size"
-        android:layout_height="@dimen/fab_size"
-        android:elevation="@dimen/fab_elevation"
-        android:background="@drawable/fab_background"
-        android:stateListAnimator="@animator/fab_anim"
-        android:layout_gravity="center_horizontal"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="52dp"
-        android:layout_alignParentBottom="true">
-
-        <ImageView
-            android:layout_width="@dimen/fab_icon_size"
-            android:layout_height="@dimen/fab_icon_size"
-            android:src="@drawable/fab_icons"
-            android:layout_gravity="center"
-            android:duplicateParentState="true"/>
-
-    </com.theandroidpeople.materialscan.FloatingActionButton>
-
-    <ImageView
-        android:id="@+id/activity_main_divider"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:alpha="0.12"
-        android:background="@android:color/black"
-        android:layout_above="@+id/activity_main_checkout"/>
-
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/sliding_tabs_layout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_above="@+id/activity_main_divider">
-
-        <com.theandroidpeople.materialscan.slidingtab.SlidingTabLayout
-            android:id="@+id/sliding_tabs"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/primary"
-            android:elevation="5dp" />
-
-        <android.support.v4.view.ViewPager
-            android:id="@+id/viewpager"
-            android:layout_width="match_parent"
-            android:layout_height="0px"
-            android:layout_weight="1"
-            android:background="@android:color/white" />
-
-    </LinearLayout>
-
-</RelativeLayout>
+</android.support.v4.widget.DrawerLayout>

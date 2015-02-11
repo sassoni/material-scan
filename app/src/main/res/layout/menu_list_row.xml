@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:orientation="vertical"
+    android:gravity="center_vertical">
+
+    <TextView 
+        android:id="@+id/menu_list_textview"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textSize="14sp"
+        android:textIsSelectable="false"
+        android:textStyle="bold"
+        android:alpha="0.87"
+        android:textColor="#000000"
+        android:text="Hello"
+        />
+
+</LinearLayout>
