@@ -40,18 +40,18 @@
 
         </LinearLayout>
 
-        <ImageView
+<!--        <ImageView
             android:id="@+id/activity_main_divider"
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:alpha="0.12"
-            android:background="@android:color/black" />
+            android:background="@android:color/black" />-->
 
         <RelativeLayout
             android:id="@+id/activity_main_checkout"
             android:layout_width="match_parent"
             android:layout_height="80dp"
-            android:background="@android:color/white"
+            android:background="#BDBDBD"
             android:orientation="vertical"
             android:padding="16dp">
 
